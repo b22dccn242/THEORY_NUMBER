@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#define ll long long
+
+using namespace std;
+
+int ltnp(long long n ){
+    long long k = 1378 , res = 1 ;
+    while(n){
+        if(n%2==1){
+            res = (res %10 * k % 10 ) % 10  ; 
+        }
+        k = (k%10 * k%10 ) % 10 ;
+        n/=2 ; 
+    }
+    return res ; 
+}
+int main() {
+    ll n ; cin >> n ; 
+    cout << ltnp(n) ; 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
