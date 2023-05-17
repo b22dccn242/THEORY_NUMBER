@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main() {
+    ll mod = 1e9 + 7 , res = 0 ;
+    ll n ; cin >> n ; 
+    for(ll i=5 ; i<=n ; i*=5 ){
+        res += n/i ; 
+        res %= mod ;
+    }
+    cout << res ; 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
