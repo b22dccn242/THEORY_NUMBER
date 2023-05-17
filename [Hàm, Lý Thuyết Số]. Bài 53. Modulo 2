@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int mod = 1e9 +7 ; 
+int  x , y , g ; 
+void euclid(int a , int mod ){
+    if(mod==0){
+        x = 1 ; y = 0 ; g = a ;     
+    }
+    else{
+        euclid(mod  , a %mod ); 
+        int tmp = x ; 
+        x = y ; 
+        y = tmp - (a/mod)*y ; 
+    }
+}
+
+int main() {
+    int a ; cin >> a ; 
+    euclid(a , mod ) ; 
+    x = (x%mod + mod ) %mod ; 
+    cout << x ; 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
