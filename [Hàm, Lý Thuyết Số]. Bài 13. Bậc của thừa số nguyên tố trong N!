@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define ll long long 
+
+using namespace std;
+
+
+//int mod = 1e9 + 7 ; 
+/*ll pt(ll n , int p ){
+    long long res = 0 ; 
+    for(int i=p ; i<=n ; i+=p ){
+        ll tmp = i ; 
+        while(tmp%p==0){
+            res++ ; 
+           tmp/=i ; 
+        }
+   }
+     return res ; 
+}*/
+
+int main() {
+    ll res = 0 ; 
+    ll n , p ; cin >> n >> p ; 
+    for(ll i=p ; i<=n ; i*=p ){ // CT LEGENDRE
+        res += n/i;  
+    }
+    cout << res ;  
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
