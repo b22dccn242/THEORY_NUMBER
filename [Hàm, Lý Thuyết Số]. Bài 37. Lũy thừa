@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+int mod = 1e9 + 7 ; 
+
+ll ltnp(ll a , ll b ){
+    ll res = 1 ;
+    while(b){
+        if(b%2==1){
+            res = (res * (a%mod)) %mod ; 
+        }
+        a = ( (a%mod) * (a%mod) ) % mod ; 
+        b/=2 ;
+    }
+    return res  ;
+}
+int main() {
+    ll a , b ; cin >> a >> b  ;
+    cout<< ltnp(a , b ) ; 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
