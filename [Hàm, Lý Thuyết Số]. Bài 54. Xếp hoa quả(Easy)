@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long 
+
+
+
+ll gt(int n ){
+    ll res =1 ; 
+    if(n==0) return 1 ; 
+    for(int i=1 ; i<=n ;i++){
+        res *=i ; 
+    }
+    return res ; 
+}
+int main() {
+    int n , k1 ,k2 , k3 , k4 ; cin >> n >> k1 >> k2 >> k3 >> k4 ; 
+    ll res =1  ; 
+    cout << gt(n) / (1ll*gt(k1)*gt(k2)*gt(k3)*gt(k4)) ;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
