@@ -1,0 +1,28 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+
+int main() {
+    long long n ; cin >> n ; 
+    vector<int> v ; 
+    map<int,int> mp ; 
+    while(n){
+        int x = n%10 ; 
+        if(x == 2 || x == 3 || x == 5 || x==7 ){
+            mp[x]++ ; 
+            v.push_back(x) ; 
+        }
+        n/=10 ; 
+    }
+    for(auto it : mp ){
+        cout << it.first << ' ' << it.second << endl ; 
+    }
+    cout << endl ; 
+    reverse(v.begin() , v.end())  ; 
+    for(int x : v ){
+        if(mp[x] != 0 ){
+            cout << x << ' ' << mp[x] << endl ; 
+            mp[x] = 0 ;
+        }
+    }
+}
