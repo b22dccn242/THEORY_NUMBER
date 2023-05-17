@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+
+ll x , y , g ;  
+void euclid(ll a , ll b ){
+    if(b==0){
+        x = 1 ; y = 0 ; g = a ; 
+    }
+    else{
+        euclid(b , a%b ) ; 
+        ll tmp = x ; 
+        x =  y ; 
+        y = tmp - (a/b)*y ; 
+    }
+}
+
+int main() {
+    ll a , b ; cin >> a >> b ;
+    if(__gcd(a , b ) != 1) cout << - 1 ;
+    else{
+        euclid(a , b )  ; 
+        x = (x%b + b ) % b ; 
+        cout << x ; 
+    }
+     
+    return 0;
+}
